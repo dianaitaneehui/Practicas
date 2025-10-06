@@ -1,3 +1,4 @@
+#include <stdio.h>
 void swap (int *a, int *b);
 int longitudCadena ( char * cadena);
 void invertirArreglo (int *arr , int size);
