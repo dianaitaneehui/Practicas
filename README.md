@@ -31,10 +31,12 @@ printf("Longitud de la cadena '%s': %d\n", cadena,lon);
  return 0;
 
 //funcion pares
-int num[]={1,2,3,4,5,8};
-int numSize= sizeof(num) / sizeof(num[0]);
-int pares = cuentaPares(num,numSize);
-printf("La cantidad de numeros pares son: %d\n", pares);
+int cuentaPares(int *arr, int size);
+  void main(){
+  int arr2[] = {1,2,3,4,5,6};   //Creacion de arreglo//
+    int n2 = 6;
+    printf("Cantidad de pares: %d\n", cuentaPares(arr2, n2));
+
 
 }
 
@@ -70,15 +72,12 @@ void invertirArreglo(int *arr, int size) {
         fin--;
         }
     }
-
- int cuentaPares (int *arr , int size){
-  int contador = 0; 
-  int i;
-  for(i=0; i<size;i++){
-    if( *(arr+i)%2==0){
-      contador ++;
+int cuentaPares(int *arr, int size) { 
+    if (arr == NULL || size < 0) return -1;  
+    int count = 0;  
+    for (int i = 0; i < size; i++) { 
+        if (arr[i] % 2 == 0) count++; 
     }
-    }
-     return contador;
+    return count; 
 }
     
